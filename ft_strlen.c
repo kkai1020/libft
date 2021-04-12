@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/27 23:15:14 by kkai              #+#    #+#             */
-/*   Updated: 2021/01/27 23:15:27 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/12 17:49:31 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/12 19:28:23 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int		i;
 

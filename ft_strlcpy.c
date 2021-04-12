@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 23:47:13 by kkai              #+#    #+#             */
-/*   Updated: 2021/01/25 00:58:41 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/12 20:22:26 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/12 21:06:50 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strcpy(char *dest, char *src)
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
-	int index;
+	size_t	n;
 
-	index = 0;
-	while (src[index] != '\0')
+	n = 0;
+	while (n < destsize - 1 && src[n] != '\0')
 	{
-		dest[index] = src[index];
-		index++;
+		dest[n] = src[n];
+		n++;
 	}
-	dest[index] = '\0';
+	dest[n] = '\0';
 	return (dest);
 }
