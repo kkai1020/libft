@@ -6,11 +6,11 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 23:47:13 by kkai              #+#    #+#             */
-/*   Updated: 2021/01/25 00:58:41 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/12 18:06:36 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strcpy(char *dest, char *src)
+size_t		*ft_strcpy(char *dest, char *src)
 {
 	int index;
 
