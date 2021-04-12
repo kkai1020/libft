@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 02:20:32 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/12 17:38:16 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/12 20:19:41 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
-	unsigned int	n;
+	size_t	n;
 
 	i = 0;
 	j = 0;

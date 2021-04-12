@@ -6,11 +6,11 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 17:49:31 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/12 17:49:54 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/12 19:28:23 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t			ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int		i;
 
