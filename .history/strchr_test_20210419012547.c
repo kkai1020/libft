@@ -6,7 +6,7 @@ char    *ft_strchr(const char *s, int c);
 int     main()
 {
     char test[30] ="abcdefgheiklmn";
-    char *p, *n;
+    char *p, n;
 
     p = strchr(test, 'd');
     printf("%s\n", p);

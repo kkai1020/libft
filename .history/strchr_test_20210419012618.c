@@ -11,7 +11,7 @@ int     main()
     p = strchr(test, 'd');
     printf("%s\n", p);
 
-    n = ft_strchr(test, 'd');
+    n = *ft_strchr(test, 'd');
     printf("%s\n", n);
     return(0);
 }
