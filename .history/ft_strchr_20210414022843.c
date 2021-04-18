@@ -6,7 +6,7 @@ char   *ft_strchar(const char *str, int c)
     while (str[i] !=  '\0')
     {
         if (str[i] == c)
-        return (*str[i]);
+        return (str[i]);
         i++;
     }
     return (NULL);

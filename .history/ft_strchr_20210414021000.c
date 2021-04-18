@@ -1,12 +1,13 @@
-char   *ft_strchar(const char *str, int c)
+char*   strchar(const char *str, int c)
 {
-    int i;
+    size_t  i;
 
     i = 0;
+
     while (str[i] !=  '\0')
     {
         if (str[i] == c)
-        return (*str[i]);
+        return (&str[i]);
         i++;
     }
     return (NULL);
