@@ -9,6 +9,6 @@ int     main()
 
     printf("%s\n", strchr(str, 'd'));
 
-    printf("%s\n", ft_strchr(str, 'd'));
+    printf("%s\n", *ft_strchr(str, 'd'));
     return(0);
 }
