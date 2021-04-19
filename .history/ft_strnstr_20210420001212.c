@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 17:49:31 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/20 00:07:03 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/20 00:12:12 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+const char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t	i;
+	int i;
+	int j;
+	size_t	size;
 
+	size = ft_strlen(str);
+	if (size > len)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	if(to_find[j] == '\0')
+		return (str);
+	while(str[i])
 	{
+		j = 0;
+		while(str[i + j] == to_find[j])
+		{
+			j++;
+			if(to_find[j] == '\0')
+			return (&str[i]);
+		}
 		i++;
 	}
-	return (i);
+	return (NULL);
 }
