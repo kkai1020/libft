@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:12:51 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/20 18:56:50 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/20 18:55:36 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		n--;
 	}
 	return (NULL);
+
 }
