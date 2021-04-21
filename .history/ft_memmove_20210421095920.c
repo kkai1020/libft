@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:58:21 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/21 10:16:19 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/21 09:59:20 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	if (p1 < p2 && p1 < p2 + n)
 	{
-		while (n)
+		while (n > 0)
 		{
 			*p1 = *p2;
 			p1++;
@@ -42,4 +42,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 		return (s1);
 	}
+
+
+
+
+
 }
