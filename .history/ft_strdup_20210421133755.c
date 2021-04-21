@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:40:37 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/21 13:40:27 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/21 13:37:55 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_strdup(char *src)
 		i++;
 	if (src[i] == NULL)
 		return (NULL);
-	dest = (char*)malloc(sizeof(char)*i + 1);
+	dest = (char*)malloc(i + 1);
 	if (dest == NULL)
 		return (NULL);
 
