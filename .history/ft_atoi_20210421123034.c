@@ -6,11 +6,11 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 02:41:03 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/21 12:39:25 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/21 12:30:34 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char str[i])
+int		ft_atoi(char *str)
 {
 	int		i;
 	int		result;
@@ -19,20 +19,20 @@ int		ft_atoi(char str[i])
 	i = 0;
 	result = 0;
 	flag = 1;
-	// check alphabet
-	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n' || str[i] == '\t'
-			|| str[i] == '\r' || str[i] == '\v')
-		i++;
+	// check alpahbet
+	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\t'
+			|| *str == '\r' || *str == '\v')
+		str++;
 
-	if (str[i] == '-')
-		flag *= -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
+	if (*str == '-')
+		flag = -1;
+	if (*str == '-' || *str == '+')
+		str++;
 
 	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
 		result = result * 10;
-		result += (int)str[i] - '0';
+		result += str[i] - '0';
 		i++;
 	}
 	return (result * flag);
