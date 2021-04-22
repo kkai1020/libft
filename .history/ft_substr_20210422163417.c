@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:38:49 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/22 16:36:54 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/22 16:34:17 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_size = ft_strlen(s);
 	if (start >= s_size || len == 0)
 		return (ft_strdup(""));
-
+	if (len > s_size - start)
+		len = s_size - start;
 	p = (char*)malloc(sizeof(char) * (len + 1));
 	if (p == 0)
 		return (NULL);
