@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:38:49 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/22 17:02:36 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/22 16:57:55 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
 	size_t	s_size;
-	size_t	i;
+
 
 	i = 0;
 	if (s == 0)
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > s_size - start)
 		len = s_size - start;
-	p = (char *)malloc(sizeof(char) * (len + 1));
+	p = (char*)malloc(sizeof(char) * (len + 1));
 	if (p == 0)
 		return (NULL);
 	while (len > 0)
