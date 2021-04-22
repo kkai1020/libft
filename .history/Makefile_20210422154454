@@ -1,0 +1,34 @@
+NAME	=	libft.a
+SRCS	=	ft_srtlen.c ft_strlcpy.
+BONUS	=
+CC		=	gcc
+CFLAGS	=	-Wall -Wextra -Werror
+RM		= rm -f
+OBJS	=	$(SRCS:.c=.o)
+BONUSOBJS	= $(BONUS:.c=.o)
+
+
+
+.c.o:
+		$(CC) $(CFLAGS)  -c $< -o $@
+
+$(NAME): $(OBJS)
+		ar rc $(NAME) $(OBJS)
+
+$(CC) $(CFLAGS) -o $@ $^
+
+all:	${NAME}
+
+clean:
+	$(RM) ${OBJS}
+
+fclean:	clean
+	$(RM) $(BONUSOBJS)
+	$(RM) $(NAME)
+
+re: fclean all
+
+bonus:	$(OBJS) $(BONUSOBJS)
+		ar rc $(NAME) $(OBJS) $(BONUSOBJS)
+
+.PHONY:		all clean fclean re bonus
