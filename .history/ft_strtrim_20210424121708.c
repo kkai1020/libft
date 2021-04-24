@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 18:10:45 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/24 12:18:34 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/24 12:17:08 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = ft_strlen(s1) - 1;
 	while (ft_strchr(set, s1[j]) == 1)
 		j--;
-	p = (char *)malloc(sizeof(char) * ((j - i) + 1));
+	p = (char *)malloc(sizeof(char) * ((j - i) + 1))
 	if (p == 0)
 		return (NULL);
 	while (i <= j)

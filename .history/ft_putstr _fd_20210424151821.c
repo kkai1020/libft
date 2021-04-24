@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putstr _fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 18:10:45 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/24 12:18:34 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/24 14:42:10 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/24 15:18:21 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*p;
-	size_t	i;
-	size_t	j;
-
-	if (!s1)
-		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
-	while (ft_strchr(set, s1[i]) == 1)
-		i++;
-	j = ft_strlen(s1) - 1;
-	while (ft_strchr(set, s1[j]) == 1)
-		j--;
-	p = (char *)malloc(sizeof(char) * ((j - i) + 1));
-	if (p == 0)
-		return (NULL);
-	while (i <= j)
+	if (!*s)
+		return ;
+	while (*s)
 	{
-		*p = str[i];
-		p++;
-		i++;
+		write(fd, s, 1);
+		s++;
 	}
-	*p = '\0';
-	return (p);
 }
