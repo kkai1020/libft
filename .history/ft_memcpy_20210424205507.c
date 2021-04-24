@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 19:41:18 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/24 21:16:13 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/20 17:40:46 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/24 20:55:07 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t len)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	else if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	unsigned char	*p1;
+	unsigned char	*p2;
+
+	p1 = (unsigned char*)dest;
+	p2 = (unsigned char*)src;
+	while (n > 0)
+	{
+		*p1 = *p2;
+		p1++;
+		p2++;
+		n--;
+	}
+	return (dest);
 }

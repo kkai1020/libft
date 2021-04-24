@@ -5,15 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/24 20:44:32 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/24 21:35:31 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/12 02:20:32 by kkai              #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2021/04/12 03:39:16 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+=======
+/*   Updated: 2021/04/12 20:19:41 by kkai             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
-
+>>>>>>> 9ca255a65b57e5abf1a9996e77092f3fe1faeeab
 {
 	size_t	i;
 	size_t	j;
@@ -26,9 +31,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 		i++;
 	while (src[j] != '\0')
 		j++;
-	if (dstsize <= i)
-		return (dstsize + j);
-	while (n < dstsize - i - 1 && src[n] != '\0')
+	if (size <= i)
+		return (size + j);
+	while (n < size - i - 1 && src[n] != '\0')
 	{
 		dest[i + n] = src[n];
 		n++;

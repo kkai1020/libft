@@ -1,22 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 19:41:18 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/24 21:16:13 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/20 18:58:21 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/24 21:54:01 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	else if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	char	*p1;
+	char	*p2;
+
+	p1 = (char*)dest;
+	p2 = (char*)src;
+	if (p1 == p2)
+		return (dest);
+	if (p1 < p2 && p1 < p2 + n)
+	{
+		while (n)
+		{
+			*p1 = *p2;
+			p1++;
+			p2++;
+			n--;
+		}
+	}
+	else
+	{
+		p1 += n - 1;
+		p2 += n - 1;
+		while(n)
+		{
+			*p1 = *p2;
+			p1--;
+			p2--;
+			n--;
+		}
+		return (p1);
+	}
 }
