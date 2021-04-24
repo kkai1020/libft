@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 10:43:58 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/24 10:36:08 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/22 18:10:45 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/22 18:19:13 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char   *ft_strchr(const char *str, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    while (*str)
-    {
-        if (*str == c)
-            return ((char*)str);
-        str++;
-    }
-    return (NULL);
+
 }
