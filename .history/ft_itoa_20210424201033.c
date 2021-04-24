@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 16:34:58 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/24 20:15:05 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/24 20:10:33 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ static int	num_len(int n)
 	while (n)
 	{
 		n /= 10;
-		i++;
+		i++
 	}
 	return (i);
 }
-
-static char	*num_con(int n, char *heap, int len)
+static char *num_con(int n, char *heap, int len)
 {
 	int		len_tmp;
 	char	tmp;
@@ -45,8 +44,7 @@ static char	*num_con(int n, char *heap, int len)
 	{
 		tmp = (n % 10) + '0';
 		n /= 10;
-		heap[len] = tmp;
-		len--;
+		heap[len--] = tmp;
 	}
 	heap[len_tmp] = '\0';
 	return (heap);
