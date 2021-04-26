@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 10:50:14 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/26 16:48:18 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/26 16:33:18 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ char   *ft_strrchr(const char *str, int c)
     {
         if (str1[i] == c1)
             return ((char*)&str[i]);
-        if (i == 0)
-            return (NULL);
         i--;
     }
     return (NULL);
