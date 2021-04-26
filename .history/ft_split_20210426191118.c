@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/20 17:40:46 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/27 00:44:57 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/26 19:11:18 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t len)
+char	**ft_split(char const *s, char c)
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
 
-	p1 = (unsigned char*)dest;
-	p2 = (unsigned char*)src;
-	if (dest == src)
-		return (dest);
-	while (len)
-	{
-		*p1 = *p2;
-		p1++;
-		p2++;
-		len--;
-	}
-	return (dest);
 }

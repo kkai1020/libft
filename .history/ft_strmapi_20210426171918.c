@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/20 17:40:46 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/27 00:44:57 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/26 17:01:05 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/26 17:19:18 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
+	unsigned int	i;
+	char			*heap;
 
-	p1 = (unsigned char*)dest;
-	p2 = (unsigned char*)src;
-	if (dest == src)
-		return (dest);
-	while (len)
+	i = 0;
+	if (!s || !f)
+		return (NULL);
+	heap = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!heap)
+		return (NULL);
+	while (s[i] = '\0')
 	{
-		*p1 = *p2;
-		p1++;
-		p2++;
-		len--;
+		heap[i] = (*f)(i, s[i]);
+		i++;
 	}
-	return (dest);
+	heap[i] = '\0';
+	return (heap);
 }
