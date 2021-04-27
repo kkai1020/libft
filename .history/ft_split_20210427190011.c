@@ -6,13 +6,13 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/27 21:51:02 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/27 19:00:11 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	*array_size(const char *s, char c)
+static unsigned int	*array_size(const char *s, char c)
 {
 	int	len;
 
@@ -25,56 +25,14 @@ static int	*array_size(const char *s, char c)
 	}
 	return (len);
 }
-
-static int	*s_size(const char *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != c)
-		i++;
-	return (i);
-}
-
-static char	**heap_free(char **heap)
-{
-	int	i;
-
-	i = 0;
-	while (heap[i] = NULL)
-	{
-		free(heap[i]);
-		heap[i] = NULL;
-		i++;
-	}
-	return (NULL);
-}
 static char	**set_array(const char *s, char **heap, char c)
 {
-	int	i;
-	int	j;
-	int	k;
+	int
 
-	i = 0;
-	k = 0;
 	while (s[i] != '\0')
 	{
-		j = 0;
-		if (s[i] == c)
-			i++;
-		else
-		{
-			j = s_size(s[i], c);
-			heap[k] = (char **)malloc(sizeof(char) * (j + 1));
-			if (!heap[k])
-				return (heap_free(heap));
-			ft_strlcpy(heap[k], s[i], j + 1);
-			i += j;
-			k++;
-		}
+
 	}
-	heap[k] = '\0';
-	return (heap);
 }
 
 char	**ft_split(char const *s, char c)
@@ -90,5 +48,7 @@ char	**ft_split(char const *s, char c)
 	if (!heap)
 		return (NULL);
 	ans = set_array(s, heap, c);
-	return (ans);
+
+
+
 }

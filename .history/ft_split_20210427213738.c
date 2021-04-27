@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/27 21:51:02 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/27 21:37:38 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,11 @@ static char	**set_array(const char *s, char **heap, char c)
 			heap[k] = (char **)malloc(sizeof(char) * (j + 1));
 			if (!heap[k])
 				return (heap_free(heap));
-			ft_strlcpy(heap[k], s[i], j + 1);
+			ft_strlcpy(heap[k], s[i], j);
 			i += j;
 			k++;
 		}
 	}
-	heap[k] = '\0';
-	return (heap);
 }
 
 char	**ft_split(char const *s, char c)
@@ -90,5 +88,7 @@ char	**ft_split(char const *s, char c)
 	if (!heap)
 		return (NULL);
 	ans = set_array(s, heap, c);
-	return (ans);
+
+
+
 }
