@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/28 03:13:33 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/21 12:40:37 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/28 03:38:56 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char		*ft_strdup(char *src)
 {
-	int		i;
-	int		j;
-	size_t	size;
+	size_t	i;
+	char	*dest;
 
-	if (*str == 0)
-		return (NULL);
-	size = ft_strlen(to_find);
 	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return ((char*)str);
-	while (len >= size)
+	if (src[i] == 0)
+		return (NULL);
+	while (src[i] != '\0')
+		i++;
+	dest = (char*)malloc(sizeof(char) * (i + 1));
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	while (src[i] != '\0')
 	{
-		len--;
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return ((char*)&str[i]);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (NULL);
+	dest[i] = '\0';
+	return (dest);
 }

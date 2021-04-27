@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/28 03:13:33 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/12 20:22:26 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/28 02:20:42 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
-	int		i;
-	int		j;
+	size_t	n;
 	size_t	size;
 
-	if (*str == 0)
-		return (NULL);
-	size = ft_strlen(to_find);
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return ((char*)str);
-	while (len >= size)
+	if (!destsize)
+		return (dest);
+	size = ft_strlen(src);
+	n = 0;
+	while (n < destsize - 1 && src[n] != '\0')
 	{
-		len--;
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return ((char*)&str[i]);
-		}
-		i++;
+		dest[n] = src[n];
+		n++;
 	}
-	return (NULL);
+	dest[n] = '\0';
+	return (size);
 }
