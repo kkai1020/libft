@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/27 23:27:27 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/27 23:21:19 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,5 @@ char	**ft_split(char const *s, char c)
 	if (!heap)
 		return (NULL);
 	ans = set_array(s, heap, c);
-	if (!ans)
-		free(heap);
 	return (ans);
 }

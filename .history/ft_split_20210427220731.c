@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/27 23:27:27 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/27 22:07:30 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static char	**heap_free(char **heap)
 	i = 0;
 	while (heap[i] != NULL)
 	{
-		heap[i] = NULL;
 		free(heap[i]);
+		heap[i] = NULL;
 		i++;
 	}
 	return (NULL);
@@ -65,7 +65,7 @@ static char	**set_array(const char *s, char **heap, char c)
 		else
 		{
 			j = s_size(&s[i], c);
-			heap[k] = (char *)malloc(sizeof(char) * (j + 1));
+			heap[k] = (char **)malloc(sizeof(char) * (j + 1));
 			if (!heap[k])
 				return (heap_free(heap));
 			ft_strlcpy(heap[k], &s[i], j + 1);
@@ -73,6 +73,7 @@ static char	**set_array(const char *s, char **heap, char c)
 			k++;
 		}
 	}
+	heap[k] = '\0';
 	return (heap);
 }
 
@@ -89,7 +90,5 @@ char	**ft_split(char const *s, char c)
 	if (!heap)
 		return (NULL);
 	ans = set_array(s, heap, c);
-	if (!ans)
-		free(heap);
 	return (ans);
 }
