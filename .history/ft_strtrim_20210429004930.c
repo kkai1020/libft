@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 18:10:45 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 01:25:05 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/29 00:49:30 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 
 	i = 0;
-	if (s1[i] == '\0' || set[i] == '\0')
+	if (s1[i] == NULL)
 		return (ft_strdup(""));
 	j = ft_strlen(s1) ;
 	while (s1[i] != '\0' && ft_strchr(set, s1[i]))

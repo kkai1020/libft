@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 18:10:45 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 01:25:05 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/29 01:24:57 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	ft_strlcpy(p, &s1[i], (j - i + 2));
 	return (p);
+}
+int	main()
+{
+	char	*s1 = "  \t \t \n   \n\n\n\t";
+	printf("%s \n", ft_strtrim(s1, "\n\t"));
+	return (0);
 }
