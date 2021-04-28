@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 16:34:58 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/28 17:49:10 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/28 17:48:13 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	num_len(int n)
 	return (i);
 }
 
-static char	*num_con(long int n, char *heap, int len)
+static char	*num_con(int n, char *heap, int len)
 {
 	int		len_tmp;
 	char	tmp;
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 	char	*heap;
 	int		len;
 
-	n = (long int)n;
+
 	len = num_len(n);
 	heap = (char *)malloc(sizeof(char) * (len + 1));
 	if (heap == NULL)

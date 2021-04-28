@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 18:10:45 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/28 16:53:57 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/28 16:53:44 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int		main()
 	char *s2 = "abc";
 	char *ret = ft_strtrim(s1, s2);
 
-	printf ("%s", ret);
+	printf ("%c", ret);
 	return (0);
 }
