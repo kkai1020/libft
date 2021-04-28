@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 00:37:39 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/29 00:14:33 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,19 @@ static char	**heap_free(char **heap)
 	}
 	return (NULL);
 }
+int	check_sep(char const *s, char const c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 static char	**set_array(const char *s, char **heap, char c)
 {
 	int	i;
@@ -68,11 +81,12 @@ static char	**set_array(const char *s, char **heap, char c)
 	while (s[i] != '\0')
 	{
 		j = 0;
-		if (s[i] == c)
+		if (check_sep(s[i], c) == 0)
 			i++;
 		else
 		{
-			j = s_size(&s[i], c);
+			while (check_sep(s[i + j], c) == 0)
+				j++;
 			heap[k] = (char *)malloc(sizeof(char) * (j + 1));
 			if (!heap[k])
 				return (heap_free(heap));
@@ -80,6 +94,7 @@ static char	**set_array(const char *s, char **heap, char c)
 			i += j;
 			k++;
 		}
+		i++;
 	}
 	return (heap);
 }
@@ -105,10 +120,7 @@ int	main()
 {
 	char *s = "     split       this for   me      !       ";
 	char **result = ft_split(s, ' ');
-	while (*result)
-	{
-		printf ("%s\n", *result);
-		*result++;
-	}
+
+	printf ("%s \n", *result);
 	return (0);
 }
