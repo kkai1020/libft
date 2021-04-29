@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 10:50:14 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 01:40:34 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 03:08:26 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strrchr(const char *str, int c)
 			ptr = &str[i];
 		i++;
 	}
-	return (NULL);
+	return (ptr);
 }

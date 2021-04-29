@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:40:37 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 01:53:07 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 03:15:47 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(char *src)
 	size_t	i;
 	char	*dest;
 
-	if (src == 0)
+	if (src == NULL)
 		return (NULL);
 	i = 0;
 	while (src[i] != '\0')
