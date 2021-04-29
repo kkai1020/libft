@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 06:21:35 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 07:07:29 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static size_t	array_size(const char *s, char c)
 {
 	size_t	len;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	len = 0;
@@ -29,7 +29,8 @@ static size_t	array_size(const char *s, char c)
 			while (s[i] && s[i] != c)
 				i++;
 		}
-		i++;
+		else
+			i++;
 	}
 	return (len);
 }
@@ -39,7 +40,7 @@ static int	s_size(const char *s, char c)
 	int	i;
 
 	i = 0;
-	while (s[i] != c)
+	while (s[i] != '\0' && s[i] != c)
 		i++;
 	return (i);
 }
