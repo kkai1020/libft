@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 10:50:14 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 03:08:26 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 04:33:02 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	c1;
-	unsigned char	*ptr;
+	size_t	i;
+	char	*str1;
+	char	c1;
+	char	*ptr;
 
-	str1 = (unsigned char *)str;
-	c1 = (unsigned char)c;
+	str1 = (char *)str;
+	c1 = (char)c;
 	ptr = NULL;
 	i = 0;
 	while (str[i])
 	{
 		if (str1[i] == c1)
-			ptr = &str[i];
+			ptr = (char *)&str[i];
 		i++;
 	}
-	return (ptr);
+	if (str1[i] == c1)
+		return ((char *)&str[i]);
+	return ((char *)ptr);
 }

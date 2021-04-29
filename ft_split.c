@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 02:57:48 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 04:18:08 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	if (!c)
-		return (ft_strdup(s));
+		return ((char **)ft_strdup((char *)s));
 	if (!*s && !c)
 	{
 		heap = (char **)malloc(sizeof(char *) * (1));

@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:38:49 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 03:13:29 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 04:36:28 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	len_size;
 
-	i = 0;
-	len_size = ft_strlen(s);
 	if (s == 0)
 		return (NULL);
+	i = 0;
+	len_size = ft_strlen(s);
 	if (start >= len_size || len == 0)
 		return (ft_strdup(""));
 	if (len > len_size - start)
