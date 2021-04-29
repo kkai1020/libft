@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 10:43:58 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 20:07:05 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 06:06:26 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *str, int c)
 	i = 0;
 	while (i <= len)
 	{
-		if (*str == c)
+		if (*str == (char)c)
 			return ((char *)str);
 		str++;
 		i++;

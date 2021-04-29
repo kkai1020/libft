@@ -6,13 +6,13 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:40:37 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 04:53:24 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 06:23:21 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	size_t	i;
 	char	*dest;

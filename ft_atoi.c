@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 02:41:03 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 19:38:43 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 05:27:32 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
+	size_t	i;
 	int		result;
 	int		flag;
 

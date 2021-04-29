@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 03:42:00 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 05:56:44 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 	size_t	size;
 
 	if (*str == 0)
@@ -34,9 +34,9 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 			j++;
 			if (to_find[j] == '\0')
 				return ((char *)&str[i]);
-			if (str[i + j] == '\0')
-				break ;
 		}
+		if (str[i + j] == '\0')
+			break ;
 	}
 	return (NULL);
 }
