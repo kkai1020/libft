@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 17:35:45 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 19:40:33 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/29 19:40:14 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 
-	p = (unsigned char *)s;
+	p = (unsigned char*)s;
 	while (n > 0)
 	{
 		*p = '\0';

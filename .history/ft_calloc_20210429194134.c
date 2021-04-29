@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/20 17:35:45 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 19:40:33 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/21 14:55:51 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/29 19:41:34 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_calloc(size_t number, size_t size)
 {
-	unsigned char	*p;
+	void	*p;
+	size_t	heap;
 
-	p = (unsigned char *)s;
-	while (n > 0)
-	{
-		*p = '\0';
-		p++;
-		n--;
-	}
+	heap = number * size;
+	if (heap == 0)
+		p = malloc(1);
+	else
+		p = malloc(heap);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, number * size);
+	return (p);
 }
