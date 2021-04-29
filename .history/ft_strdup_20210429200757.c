@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 10:50:14 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/30 01:40:34 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/21 12:40:37 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/29 20:07:58 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strdup(char *src)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	c1;
-	unsigned char	*ptr;
+	size_t	i;
+	char	*dest;
 
-	str1 = (unsigned char *)str;
-	c1 = (unsigned char)c;
-	ptr = NULL;
 	i = 0;
-	while (str[i])
+	while (src[i] != '\0')
+		i++;
+	if (src == 0)
+		return (NULL);
+	dest = (char *)malloc(sizeof(char) * (i + 1));
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	while (src[i] != '\0')
 	{
-		if (str1[i] == c1)
-			ptr = &str[i];
+		dest[i] = src[i];
 		i++;
 	}
-	return (NULL);
+	dest[i] = '\0';
+	return (dest);
 }

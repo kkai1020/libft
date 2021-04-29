@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 14:55:51 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 19:41:55 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/30 01:17:05 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ void	*ft_calloc(size_t number, size_t size)
 
 	heap = number * size;
 	if (heap == 0)
-		p = malloc(1);
-	else
-		p = malloc(heap);
+		heap = 1;
+	p = malloc(heap);
 	if (p == NULL)
 		return (NULL);
-	ft_bzero(p, number * size);
+	ft_bzero(p, heap);
 	return (p);
 }
