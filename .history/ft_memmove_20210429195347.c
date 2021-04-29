@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 20:11:00 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/20 18:58:21 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/29 19:53:47 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		i;
-	int		j;
-	size_t	size;
+	unsigned char	*dest1;
+	unsigned char	*src2;
 
-	if (*str == 0)
-		return (NULL);
-	size = ft_strlen(to_find);
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return ((char *)str);
-	while (len >= size)
+	dest1 = (unsigned char *)dest;
+	src2 = (unsigned char *)src;
+	if (dest1 == src2)
+		return (dest);
+	if (dest1 < src2)
 	{
-		len--;
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return ((char *)&str[i]);
-		}
-		i++;
+		while (n-- > 0)
+			*dest1++ = *src2++;
 	}
-	return (NULL);
+	else
+	{
+		dest1 += n - 1;
+		src2 += n - 1;
+		while(n-- > 0)
+			*dest1-- = *src2--;
+	}
+	return (dest);
 }

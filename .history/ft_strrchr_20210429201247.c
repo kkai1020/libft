@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 20:11:00 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/19 10:50:14 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/29 20:12:47 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char   *ft_strrchr(const char *str, int c)
 {
-	int		i;
-	int		j;
-	size_t	size;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	c1;
 
-	if (*str == 0)
-		return (NULL);
-	size = ft_strlen(to_find);
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return ((char *)str);
-	while (len >= size)
+	i = ft_strlen(str);
+	str1 = (unsigned char *)str;
+	c1 = (unsigned char)c;
+	while (i >= 0)
 	{
-		len--;
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return ((char *)&str[i]);
-		}
-		i++;
+		if (str1[i] == c1)
+			return ((char*)&str[i]);
+		if (i == 0)
+			return (NULL);
+		i--;
 	}
 	return (NULL);
 }

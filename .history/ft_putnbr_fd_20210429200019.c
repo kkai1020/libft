@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 20:11:00 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/24 15:47:37 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/29 20:00:19 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	int		j;
-	size_t	size;
+	int		flag;
+	char	c;
 
-	if (*str == 0)
-		return (NULL);
-	size = ft_strlen(to_find);
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return ((char *)str);
-	while (len >= size)
+	flag = 1;
+	if (n < 0)
 	{
-		len--;
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return ((char *)&str[i]);
-		}
-		i++;
+		flag = -1;
+		write(fd, (void *)'-', 1 );
 	}
-	return (NULL);
+	if (n < 10 && n > -10)
+	{
+		c = (n * flag) + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10 * flag, fd);
+		c = n % 10 * flag + '0';
+		write(fd, &c, 1);
+	}
 }

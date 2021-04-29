@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 15:35:53 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 20:11:00 by kkai             ###   ########.fr       */
+/*   Created: 2021/04/19 10:43:58 by kkai              #+#    #+#             */
+/*   Updated: 2021/04/29 20:04:22 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char   *ft_strchr(const char *str, int c)
 {
-	int		i;
-	int		j;
-	size_t	size;
+    size_t	len;
+    size_t	i;
 
-	if (*str == 0)
-		return (NULL);
-	size = ft_strlen(to_find);
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return ((char *)str);
-	while (len >= size)
-	{
-		len--;
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return ((char *)&str[i]);
-		}
-		i++;
-	}
-	return (NULL);
+    len = ft_strlen(str);
+    i = 0;
+    while (i <= len)
+    {
+        if (*str == c)
+            return ((char*)str);
+        str++;
+        i++;
+    }
+    return (NULL);
 }
