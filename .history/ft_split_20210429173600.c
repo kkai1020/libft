@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 17:38:55 by kkai             ###   ########.fr       */
+/*   Updated: 2021/04/29 17:36:00 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,3 +102,14 @@ char	**ft_split(char const *s, char c)
 		free(heap);
 	return (ans);
 }
+/*int	main()
+{
+	char *s = "     split       this for   me      !       ";
+	char **result = ft_split(s, ' ');
+	while (*result)
+	{
+		printf ("%s\n", *result);
+		*result++;
+	}
+	return (0);
+}*/

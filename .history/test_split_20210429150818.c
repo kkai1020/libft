@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 18:02:48 by kkai              #+#    #+#             */
-/*   Updated: 2021/04/29 17:38:55 by kkai             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 static size_t	array_size(const char *s, char c)
@@ -19,10 +7,10 @@ static size_t	array_size(const char *s, char c)
 
 	i = 0;
 	len = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] != NULL)
+	while (s[i] != '\0')
 	{
+		while (s[i] == c)
+			i++;
 		if (s[i] != c)
 		{
 			len++;
@@ -97,8 +85,30 @@ char	**ft_split(char const *s, char c)
 	if (!heap)
 		return (NULL);
 	ans = set_array(s, heap, c);
-	ans[size] = NULL;
 	if (!ans)
 		free(heap);
 	return (ans);
+}
+int	main()
+{
+	char *s = "     split       this for   me      !       ";
+	char **result = ft_split(s, ' ');
+	while (*result)
+	{
+		printf ("%s\n", *result);
+		*result++;
+	}
+	return (0);
+}
+
+int	main()
+{
+	char *s = "     split       this for   me      !       ";
+	char **result = ft_split(s, ' ');
+	while (*result)
+	{
+		printf ("%s\n", *result);
+		*result++;
+	}
+	return (0);
 }
