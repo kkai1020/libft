@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:06:49 by kkai              #+#    #+#             */
-/*   Updated: 2021/05/01 16:05:23 by kkai             ###   ########.fr       */
+/*   Updated: 2021/05/01 21:13:42 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*tmp;
+
+	if (lst == NULL || new == NULL)
+		return ;
 	if (*lst == NULL)
+	{
 		*lst = new;
 		return ;
-	while (*lst -> next != NULL)
-		lst = &(*lst) -> next;
-	*lst -> next = new;
+	}
+	tmp = *lst;
+	while (tmp -> next != NULL)
+		tmp = tmp -> next;
+	tmp -> next = new;
 }

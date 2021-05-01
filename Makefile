@@ -32,7 +32,7 @@ SRCS	=	ft_strlen.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_split.c \
-		ft_strmapi.c #\
+		ft_strmapi.c
 BONUS	=	ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
@@ -57,15 +57,14 @@ $(NAME): $(OBJS)
 all:	${NAME}
 
 clean:
-		$(RM) ${OBJS}
+		$(RM) ${OBJS} ${BONUSOBJS}
 
 fclean:	clean
-		$(RM) $(BONUSOBJS)
 		$(RM) $(NAME)
 
 re: fclean all
 
-bonus:	$(OBJS) $(BONUSOBJS)
-		ar rcs $(NAME) $(OBJS) $(BONUSOBJS)
+bonus:	 ${NAME} $(BONUSOBJS)
+		ar rcs $(NAME) $(BONUSOBJS)
 
 .PHONY:	all clean fclean re bonus

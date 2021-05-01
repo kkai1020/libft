@@ -6,13 +6,13 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 16:09:00 by kkai              #+#    #+#             */
-/*   Updated: 2021/05/01 17:38:30 by kkai             ###   ########.fr       */
+/*   Updated: 2021/05/01 20:08:07 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst == NULL)
 		return ;
