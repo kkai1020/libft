@@ -6,7 +6,7 @@
 /*   By: kkai <kkai@student.42tokyo.jp>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 18:20:46 by kkai              #+#    #+#             */
-/*   Updated: 2021/05/01 19:06:24 by kkai             ###   ########.fr       */
+/*   Updated: 2021/05/02 00:18:34 by kkai             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst == NULL)
+	if (f == NULL)
 		return ;
 	while (lst != NULL)
 	{
